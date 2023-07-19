@@ -103,7 +103,7 @@ rightarrow.addEventListener("click", () => {
 // For maintenance
 // window.location.href = "https://barcrawl-zagreb.com/maintenance.html";
 
-let navLinkss = document.querySelector(".nav-links");
+let navLinks = document.querySelector(".nav-links");
 
 $(document).ready(function () {
   $("#nav-icon").click(function () {

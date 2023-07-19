@@ -25,7 +25,7 @@ if (!empty($_POST)) {
    $name = $_POST['name'];
    $email = $_POST['email'];
    $message = $_POST['message'];
-   $full_number = $POST['full_number'];
+   $full_number = $_POST['full_number'];
    $dateFor = $_POST['date-for'];
    $numberOfPeople = $_POST['numberOfPeople'];
    $foundAboutUs = $_POST['foundAboutUs'];
@@ -43,10 +43,10 @@ if (!empty($_POST)) {
 //Port to connect smtp
 	$mail->Port = "587";
 //Set gmail username
-	$mail->Username = "barcrawlzagreb@gmail.com";
+	$mail->Username = "dumanovskyfinance@gmail.com";
 //Set gmail password
-	// $mail->Password = "yykmxheirqsjfsbx";
-	$mail->Password = "bwcdoiiyzvsnbnne";
+	$mail->Password = "yykmxheirqsjfsbx";
+	// $mail->Password = "bwcdoiiyzvsnbnne";
 //Email subject
 	$mail->Subject = "New form submition";
 //Set sender email
@@ -58,7 +58,7 @@ if (!empty($_POST)) {
 //Email body
 	// $mail->Body = "<h1>This is HTML h1 Heading</h1></br><p>This is html paragraph</p>";
 //Add recipient
-	$mail->addAddress('barcrawlzagreb@gmail.com');
+	$mail->addAddress('dumanovskyfinance@gmail.com');
        // Enable HTML if needed
        $mail->isHTML(true);
        $bodyParagraphs = ["Name: {$name}", "Email: {$email}", "Message:", nl2br($message),"Phone number: {$full_number}", "Date: {$dateFor}", "number of People: {$numberOfPeople}", "We found about you through {$foundAboutUs}" ];
