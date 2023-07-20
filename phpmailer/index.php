@@ -25,7 +25,7 @@ if (!empty($_POST)) {
    $name = $_POST['name'];
    $email = $_POST['email'];
    $message = $_POST['message'];
-   $full_number = $POST['full_number'];
+   $full_number = $_POST['full_number'];
    $dateFor = $_POST['date-for'];
    $numberOfPeople = $_POST['numberOfPeople'];
    $foundAboutUs = $_POST['foundAboutUs'];

@@ -5,13 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
 
-    <meta
-      name="description"
-      content="Bar Crawl Zagreb is a guided party tour, also called bar hopping or bar tour where crazy challenges 
-	and awesome guides are prepared to spice up your night out in Zagreb."
-    />
-
-    <title>Bar Crawl Zagreb</title>
+    <title>Testing Page</title>
     <link
       rel="icon"
       type="image/x-icon"
@@ -32,9 +26,14 @@
       href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css"
     />
 
-    <link rel="stylesheet" href="style.css?ver=1" />
+    <link rel="stylesheet" href="style.css?ver=22" />
 
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
+    <script
+      src="https://static.elfsight.com/platform/platform.js"
+      data-use-service-core
+      defer
+    ></script>
 
     <!-- <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
     <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
@@ -47,12 +46,30 @@
           <div class="logo">
             <img src="img/logo.png" alt="Bar crawl Zagreb" />
           </div>
+
+          <ul class="nav-links">
+            <li class="nav-link">
+              <a href="#about-us">About us</a>
+            </li>
+            <li class="nav-link"><a href="#pricing">Pricing</a></li>
+            <li class="nav-link"><a href="#gallery-section">Gallery</a></li>
+            <li class="nav-link"><a href="#guides-section">Guides</a></li>
+            <li class="nav-link"><a href="#review-section">Review</a></li>
+            <li class="nav-link"><a href="#contact">Contact</a></li>
+          </ul>
+
+          <div id="nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </nav>
 
         <div class="hero-section-content">
           <h1>
             <span>Ready for</span> <br />
-            Bar Crawl?
+            No. 1 bar crawl <br />
+            in the city?
           </h1>
 
           <a href="#contact" class="button">Contact us</a>
@@ -116,7 +133,7 @@
       </div>
     </header>
 
-    <section class="about">
+    <section class="about" id="about-us">
       <div class="container">
         <div class="about-wrapper">
           <div class="about-img">
@@ -132,7 +149,13 @@
             <p>
               Arguably the best Pub Crawl ever. Crazy challenges and awesome
               guides that are always prepared to spice up your night out in
-              Zagreb. The meeting point is the
+              Zagreb.
+              <br />
+              <br />
+              Longest running and only bar crawl in Zagreb with local guides.
+              <a href="#guides-section" class="accent">(meet our guides)</a>
+              <br />
+              <br />The meeting point is the
               <span
                 ><a
                   href="https://www.google.com/maps/dir//Trg+bana+Josipa+Jela%C4%8Di%C4%87a,+10000,+Zagreb/@45.8128634,15.9685272,15z/data=!4m9!4m8!1m0!1m5!1m1!1s0x4765d6fdc3ad82b1:0xeb4b22854194dc34!2m2!1d15.977282!2d45.8128637!3e0"
@@ -145,7 +168,7 @@
             </p>
 
             <h5>The bar crawl <span>includes </span></h5>
-            <li>Beer for beer pong</li>
+            <li>Beer pong table with beers included</li>
             <li>
               4 shots of rakija (1 rakija as a welcome drink at each location)
             </li>
@@ -349,6 +372,7 @@
               <li>Stag & bachelorette party</li>
               <li>Groups ( 10-150 )</li>
               <li>Rakija tasting</li>
+              <li>Wine tour</li>
             </ul>
             <div class="plan-select">
               <a href="#contact" class="plan-btn btn btn-primary">
@@ -593,6 +617,131 @@
       </div>
     </section>
 
+    <section id="guides-section">
+      <div class="container">
+        <div class="swiper mySwiper2">
+          <h2 class="swiper-title"><span class="accent">Our</span> Guides</h2>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide guides">
+              <div class="guides-container">
+                <div class="guides-img"></div>
+                <div class="guides-text">
+                  <h3 class="guides-name">Antonio</h3>
+                  <div class="guides-description">
+                    <p>
+                      Antonio is our bar crawl veteran. He will be your wingman,
+                      best friend, fake boyfriend, party master or anything you
+                      can imagine.
+                    </p>
+                    <p>
+                      You will never get lost with him, he is our bar crawl
+                      papa!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide guides">
+              <div class="guides-container">
+                <div class="guides-img"></div>
+                <div class="guides-text">
+                  <h3 class="guides-name">Karla</h3>
+                  <div class="guides-description">
+                    <p>Karla is a bachelor of Computing in making.</p>
+                    <p>
+                      When not hosting Bar Crawls, she is most likely to be
+                      found in the first rows of metal or punk concerts, camping
+                      somewhere in Croatia's beautiful Nature, or at home
+                      playing video and board games.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide guides">
+              <div class="guides-container">
+                <div class="guides-img"></div>
+                <div class="guides-text">
+                  <h3 class="guides-name">Karlo</h3>
+                  <div class="guides-description">
+                    <p>
+                      Karlo is a student far better at partying than studying.
+                      He has been doing bar crawls since 2016 and if you still
+                      haven't been with him at a party, now is the time!
+                    </p>
+                    <p>
+                      With him, every night is memorable and his moto is "momma
+                      did not raise a p****"
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide guides">
+              <div class="guides-container">
+                <div class="guides-img"></div>
+                <div class="guides-text">
+                  <h3 class="guides-name">Iva</h3>
+                  <div class="guides-description">
+                    <p>
+                      Iva is a sociology student and professional dancer. She
+                      has been doing bar crawls for two years now and has the
+                      trained loud voice to prove it.
+                    </p>
+                    <p>
+                      Feel free to ask her for a drink recommendation or a dance
+                      battle 😅 P.s. Yes, she gets the J. Lawrence reference
+                      every Bar Crawl
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-buttons-guides">
+            <div class="swiper-button-next swiper-button-next-guides enabled">
+              <svg
+                width="100"
+                height="26"
+                viewBox="0 0 42 23"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M41.1398 12.5425C41.7255 11.9567 41.7255 11.007 41.1398 10.4212L31.5938 0.875271C31.008 0.289484 30.0583 0.289484 29.4725 0.875271C28.8867 1.46106 28.8867 2.4108 29.4725 2.99659L37.9578 11.4819L29.4725 19.9672C28.8867 20.5529 28.8867 21.5027 29.4725 22.0885C30.0583 22.6743 31.008 22.6743 31.5938 22.0885L41.1398 12.5425ZM0.0791016 12.9819L40.0791 12.9819V9.98187L0.0791016 9.98187L0.0791016 12.9819Z"
+                  fill="#FF9701"
+                />
+              </svg>
+              Next
+            </div>
+            <div class="number-el"></div>
+            <div class="swiper-button-prev swiper-button-prev-guides enabled">
+              Prev
+              <svg
+                width="100"
+                height="26"
+                viewBox="0 0 42 23"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M41.1398 12.5425C41.7255 11.9567 41.7255 11.007 41.1398 10.4212L31.5938 0.875271C31.008 0.289484 30.0583 0.289484 29.4725 0.875271C28.8867 1.46106 28.8867 2.4108 29.4725 2.99659L37.9578 11.4819L29.4725 19.9672C28.8867 20.5529 28.8867 21.5027 29.4725 22.0885C30.0583 22.6743 31.008 22.6743 31.5938 22.0885L41.1398 12.5425ZM0.0791016 12.9819L40.0791 12.9819V9.98187L0.0791016 9.98187L0.0791016 12.9819Z"
+                  fill="#FF9701"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="section"
+      id="review-section"
+      style="background-color: #181818"
+    >
+      <div class="elfsight-app-937e253e-46d0-440a-a53b-013ca8db3432"></div>
+    </section>
+
     <section id="contact">
       <div class="container">
         <div class="contact-wrapper">
@@ -690,6 +839,7 @@
                   <option value="Promoter">Promoter</option>
                   <option value="Website">Website</option>
                   <option value="Social Media">Social Media</option>
+                  <option value="Social Media">Sticker</option>
                   <option value="Other">Other</option>
                 </select>
               </div>
@@ -916,7 +1066,14 @@
 <script></script>
 
 <!-- Swiper JS -->
+<script
+  src="https://code.jquery.com/jquery-3.7.0.min.js"
+  integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+  crossorigin="anonymous"
+></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.7.1/dist/gsap.min.js"></script>
+
 <script src="js/index.js"></script>
 <script src="js/mail.js"></script>
 <script src="js/restriction.js"></script>

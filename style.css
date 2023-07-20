@@ -253,10 +253,9 @@ nav {
 /* Icon 4 */
 
 #nav-icon {
-  width: 60px;
-  height: 45px;
+  width: 40px;
+  height: 29px;
   position: relative;
-  margin: 50px auto;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -267,11 +266,12 @@ nav {
   transition: 0.5s ease-in-out;
   cursor: pointer;
   z-index: 20;
+  padding: 4px;
 }
 #nav-icon span {
   display: block;
   position: absolute;
-  height: 9px;
+  height: 3px;
   width: 100%;
   background: var(--accent);
   border-radius: 9px;
@@ -296,7 +296,7 @@ nav {
 }
 
 #nav-icon span:nth-child(2) {
-  top: 18px;
+  top: 12px;
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -o-transform-origin: left center;
@@ -304,7 +304,7 @@ nav {
 }
 
 #nav-icon span:nth-child(3) {
-  top: 36px;
+  top: 24px;
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -o-transform-origin: left center;
@@ -330,11 +330,15 @@ nav {
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  top: 39px;
+  top: 26px;
   left: 8px;
 }
 
-@media (max-width: 540px) {
+@media (max-width: 640px) {
+  nav {
+    align-items: center;
+  }
+
   .nav-links {
     position: absolute;
     width: 100%;
@@ -357,7 +361,7 @@ nav {
   }
 }
 
-@media (min-width: 540px) {
+@media (min-width: 640px) {
   #nav-icon {
     display: none;
   }

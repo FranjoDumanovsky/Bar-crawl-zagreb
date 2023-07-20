@@ -175,86 +175,6 @@ const submissionAlert = document.querySelector(".submission-alert");
 const errorMessage = document.querySelector(".error-message");
 const successMessage = document.querySelector(".success-message");
 
-// Submit form function
-// function submitForm(e) {
-//   e.preventDefault();
-//   if (
-//     nameInputValidation &&
-//     emailInputValidation &&
-//     numberOfPeopleValidation &&
-//     phoneInputValidation &&
-//     isChecked &&
-//     foundAboutUsValidation
-//   ) {
-//     submissionAlert.classList.add("show");
-
-//     // Get form data
-//     var name = document.getElementById("name").value;
-//     var email = document.getElementById("email").value;
-//     var message = document.getElementById("message").value;
-//     var dateFor = document.getElementById("date-for").value;
-//     var phoneNumber = document.getElementById("phoneNumber").value;
-//     var fullPhoneNumberValue =
-//       iti.getSelectedCountryData().dialCode + " " + phoneNumber;
-//     var numberOfPeople = document.getElementById("numberOfPeople").value;
-//     var foundAboutUs = document.getElementById("foundAboutUs").value;
-
-//     const scriptURL =
-//       "https://script.google.com/macros/s/AKfycbxI-LsDBsf28vkADL0jY9UakGXgdSWG5ZnG1VdcD6W-Y-MRxjlLKaNNilpR8nRjoAq1/exec";
-//     // const scriptURL =
-//     //   "https://script.google.com/macros/s/AKfycbxI-LsDBsf28vkADL0jY9UakGXgdSWG5ZnG1VdcD6W-Y-MRxjlLKaNNilpR8nRjoAq1/exec";
-//     // fetch(scriptURL, { method: "POST", body: new FormData(form) })
-//     //   .then((response) => {
-//     //     if (response.ok) {
-//     //       successMessage.classList.add("show");
-//     //     } else {
-//     //       throw new Error("Form submission failed");
-//     //     }
-//     //   })
-//     //   .catch((error) => {
-//     //     errorMessage.classList.add("show");
-//     //   });
-
-//     // Send data to PHP script with AJAX request
-//     var xhr = new XMLHttpRequest();
-
-//     xhr.onreadystatechange = function () {
-//       if (xhr.readyState == 4 && xhr.status == 200) {
-//         successMessage.classList.add("show");
-//       } else {
-//         errorMessage.classList.add("show");
-//       }
-//     };
-//     xhr.open("POST", "./phpmailer/index.php", true);
-//     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-//     xhr.send(
-//       "name=" +
-//         name +
-//         "&email=" +
-//         email +
-//         "&message=" +
-//         message +
-//         "&fullPhoneNumberValue=" +
-//         fullPhoneNumberValue +
-//         "&date-for=" +
-//         dateFor +
-//         "&numberOfPeople=" +
-//         numberOfPeople +
-//         "&foundAboutUs=" +
-//         foundAboutUs
-//     );
-
-//     phoneInput.parentElement.style.display = "none";
-//   } else {
-//     checkInputs();
-//   }
-// }
-
-// submitButton.addEventListener("click", (e) => {
-//   submitForm(e);
-// });
-
 function submitForm(e) {
   e.preventDefault();
   const form = document.getElementById("contact-form");
@@ -278,14 +198,15 @@ function submitForm(e) {
     var dateFor = document.getElementById("date-for").value;
     var phoneNumber = document.getElementById("phoneNumber").value;
 
-    var fullPhoneNumberValue =
-      iti.getSelectedCountryData().dialCode + " " + phoneNumber;
     var numberOfPeople = document.getElementById("numberOfPeople").value;
     var foundAboutUs = document.getElementById("foundAboutUs").value;
 
     var full_number = iti.getNumber(intlTelInputUtils.numberFormat.E164);
-    $("input[name='phone_number[full]'").val(full_number);
-    console.log(full_number);
+    $("input[name='phoneNumber[full]'").val(full_number);
+    console.log(
+      full_number,
+      $("input[name='phoneNumber[full]'").val(full_number)
+    );
 
     fetch(scriptURL, { method: "POST", body: new FormData(form) })
       .then(successMessage.classList.add("show"))
