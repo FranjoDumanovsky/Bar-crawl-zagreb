@@ -262,13 +262,14 @@ function submitForm(e) {
   } else {
     // Log when form validation fails.
     console.log('Form validation failed');
-    checkInputs();
+
   }
 }
 
 
 document.addEventListener("DOMContentLoaded", function() {
   submitButton.addEventListener("click", (e) => {
+    checkInputs();
     submitForm(e);
   });
   
