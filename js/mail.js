@@ -219,8 +219,7 @@ function submitForm(e) {
 
         // Check if the request was successful.
         if (response.ok) {
-          loadingMessage.classList.remove("show");
-          successMessage.classList.add("show");
+
 
           // Send data to PHP script with AJAX request
           var xhr = new XMLHttpRequest();
@@ -233,6 +232,7 @@ function submitForm(e) {
             console.log('XHR status', xhr.status);
 
             if (xhr.readyState == 4 && xhr.status == 200) {
+              loadingMessage.classList.remove("show");
               successMessage.classList.add("show");
             }
           };
