@@ -1368,12 +1368,14 @@ input {
 }
 
 .submission-alert .success-message,
-.submission-alert .error-message {
+.submission-alert .error-message,
+.submission-alert .loading-message {
   display: none;
 }
 
 .submission-alert .success-message.show,
-.submission-alert .error-message.show {
+.submission-alert .error-message.show,
+.submission-alert .loading-message.show {
   display: flex;
   flex-direction: column;
   justify-content: center;
