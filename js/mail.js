@@ -243,6 +243,11 @@ function submitForm(e) {
   }
 }
 
-submitButton.addEventListener("click", (e) => {
-  submitForm(e);
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  submitButton.addEventListener("click", (e) => {
+    submitForm(e);
+  });
+  
 });
