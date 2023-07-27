@@ -178,6 +178,9 @@ function submitForm(e) {
   const scriptURL =
     "https://script.google.com/macros/s/AKfycbyQp57j3RVtKyM-ZkszMbCMgq6pn1IenSN7TAdbxTJi9yyp506KBGEPHbsbolhRRn2tkQ/exec";
 
+
+ console.log(nameInputValidation,emailInputValidation,phoneInputValidation,numberOfPeopleValidation,isChecked,foundAboutUsValidation);
+
   if (
     nameInputValidation &&
     emailInputValidation &&
