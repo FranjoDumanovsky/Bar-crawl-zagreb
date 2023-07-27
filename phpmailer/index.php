@@ -61,7 +61,7 @@ if (!empty($_POST)) {
 	$mail->addAddress('dumanovskyfinance@gmail.com');
        // Enable HTML if needed
        $mail->isHTML(true);
-       $bodyParagraphs = ["<strong>Name:</strong> {$name}", "<strong>Email:</strong> {$email}", "<strong>Message:</strong>", nl2br($message),"<strong>Phone number:</strong> +{$full_number}", "<strong>Date:</strong> {$dateFor}", "<strong>Group number:</strong> {$numberOfPeople}", "<strong>We found about you through:</strong> {$foundAboutUs}"];
+       $bodyParagraphs = ["<strong>Name:</strong> {$name}", "<strong>Email:</strong> {$email}", "<strong>Message:</strong>", nl2br($message),"<strong>Phone number:</strong> +{$full_number}", "<strong>Date:</strong> {$dateFor}", "<strong>Number of people:</strong> {$numberOfPeople}", "<strong>We found about you through:</strong> {$foundAboutUs}"];
        $body = join('<br />', $bodyParagraphs);
        $mail->Body = $body;
        echo $body;
