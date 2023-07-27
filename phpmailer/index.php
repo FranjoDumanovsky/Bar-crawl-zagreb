@@ -43,10 +43,10 @@ if (!empty($_POST)) {
 //Port to connect smtp
 	$mail->Port = "587";
 //Set gmail username
-	$mail->Username = "dumanovskyfinance@gmail.com";
+	$mail->Username = "barcrawlzagreb@gmail.com";
 //Set gmail password
-	$mail->Password = "yykmxheirqsjfsbx";
-	// $mail->Password = "bwcdoiiyzvsnbnne";
+	// $mail->Password = "yykmxheirqsjfsbx";
+	$mail->Password = "bwcdoiiyzvsnbnne";
 //Email subject
 	$mail->Subject = "Bar crawl Zagreb - Form submission";
 //Set sender email
@@ -58,7 +58,7 @@ if (!empty($_POST)) {
 //Email body
 	// $mail->Body = "<h1>This is HTML h1 Heading</h1></br><p>This is html paragraph</p>";
 //Add recipient
-	$mail->addAddress('dumanovskyfinance@gmail.com');
+	$mail->addAddress('barcrawlzagreb@gmail.com');
        // Enable HTML if needed
        $mail->isHTML(true);
        $bodyParagraphs = ["<strong>Name:</strong> {$name}", "<strong>Email:</strong> {$email}", "<strong>Message:</strong>", nl2br($message),"<strong>Phone number:</strong> +{$full_number}", "<strong>Date:</strong> {$dateFor}", "<strong>Number of people:</strong> {$numberOfPeople}", "<strong>We found about you through:</strong> {$foundAboutUs}"];
