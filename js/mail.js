@@ -168,6 +168,7 @@ const submissionAlert = document.querySelector(".submission-alert");
 const errorMessage = document.querySelector(".error-message");
 const successMessage = document.querySelector(".success-message");
 const loadingMessage = document.querySelector(".loading-message");
+const itiFlagContainer= document.querySelector(".iti__flag-container")
 
 function submitForm(e) {
   e.preventDefault();
@@ -193,7 +194,7 @@ function submitForm(e) {
     // Log when the form passes validation.
     console.log('Form validation passed');
 
-
+    itiFlagContainer.classList.add("hide")
     submissionAlert.classList.add("show");
     loadingMessage.classList.add("show");
     // Get form data
