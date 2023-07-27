@@ -45,8 +45,8 @@ if (!empty($_POST)) {
 //Set gmail username
 	$mail->Username = "dumanovskyfinance@gmail.com";
 //Set gmail password
-	// $mail->Password = "yykmxheirqsjfsbx";
-	$mail->Password = "bwcdoiiyzvsnbnne";
+	$mail->Password = "yykmxheirqsjfsbx";
+	// $mail->Password = "bwcdoiiyzvsnbnne";
 //Email subject
 	$mail->Subject = "New form submition";
 //Set sender email
