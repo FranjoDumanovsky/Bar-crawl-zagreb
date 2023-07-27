@@ -185,18 +185,16 @@ function submitForm(e) {
     submissionAlert.classList.add("show");
 
     // Get form data
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var message = document.getElementById("message").value;
-    var dateFor = document.getElementById("date-for").value;
-    var phoneNumber = document.getElementById("phoneNumber").value;
-    var dialNumber = iti.s.dialCode;
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+    let dateFor = document.getElementById("date-for").value;
+    let phoneNumber = document.getElementById("phoneNumber").value;
+    let dialNumber = iti.s.dialCode;
+    let numberOfPeople = document.getElementById("numberOfPeople").value;
+    let foundAboutUs = document.getElementById("foundAboutUs").value;
+    let full_number = `+${dialNumber} ${phoneNumber}`;
 
-    var numberOfPeople = document.getElementById("numberOfPeople").value;
-    var foundAboutUs = document.getElementById("foundAboutUs").value;
-
-    var full_number = `+${dialNumber} ${phoneNumber}`;
-    console.log(full_number);
 
     // Fetch now returns a Promise. Chain .then() to wait for its completion.
     fetch(scriptURL, { method: "POST", body: new FormData(form) })
