@@ -61,7 +61,7 @@ if (!empty($_POST)) {
 	$mail->addAddress('barcrawlzagreb@gmail.com');
        // Enable HTML if needed
        $mail->isHTML(true);
-       $bodyParagraphs = ["Name: {$name}", "Email: {$email}", "Message:", nl2br($message),"Phone number: {$full_number}", "Date: {$dateFor}", "number of People: {$numberOfPeople}", "We found about you through {$foundAboutUs}" ];
+       $bodyParagraphs = ["Name: {$name}", "Email: {$email}", "Message:", nl2br($message),"Phone number: +{$full_number}", "Date: {$dateFor}", "number of People: {$numberOfPeople}", "We found about you through {$foundAboutUs}" ];
        $body = join('<br />', $bodyParagraphs);
        $mail->Body = $body;
        echo $body;

@@ -103,12 +103,24 @@ rightarrow.addEventListener("click", () => {
 // For maintenance
 // window.location.href = "https://barcrawl-zagreb.com/maintenance.html";
 
-let navLinkss = document.querySelector(".nav-links");
+const navLinks = document.querySelector(".nav-links");
+const navIcon = document.querySelector("#nav-icon");
+const navLinkArray = document.querySelectorAll(".nav-link");
 
-$(document).ready(function () {
-  $("#nav-icon").click(function () {
-    $(this).toggleClass("open");
+const toggleMenu = function () {
+  navIcon.classList.toggle("open");
+  navLinks.classList.toggle("open");
+  body.classList.toggle("overflow");
+};
 
-    navLinks.classList.toggle("open");
+navIcon.addEventListener("click", function () {
+  toggleMenu();
+});
+
+navLinkArray.forEach((linkItem) => {
+  linkItem.addEventListener("click", function () {
+    if (body.classList.contains("overflow")) {
+      toggleMenu();
+    }
   });
 });

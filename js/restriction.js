@@ -1,5 +1,9 @@
 "use strict";
 
+const body = document.body;
+
+console.log(body);
+
 const btnAllow = document.querySelector(".restriction-button--yes");
 const btnPrevent = document.querySelector(".restriction-button--no");
 const overlay = document.querySelector(".restriction-overlay");
@@ -22,14 +26,14 @@ const setRestriction = function () {
   isAdult = false;
   localStorage.setItem("isAdult", false);
   window.history.back();
-  document.body.style.overflow = "hidden";
+  body.classList.add("overflow");
 };
 
 const removeRestriction = function () {
   isAdult = true;
   localStorage.setItem("isAdult", true);
   overlay.classList.add("remove");
-  document.body.style.overflow = "visible";
+  body.classList.remove("overflow");
 };
 
 if (localStorage.isAdult === "true") {
@@ -39,5 +43,3 @@ if (localStorage.isAdult === "true") {
 
 btnPrevent.addEventListener("click", setRestriction);
 btnAllow.addEventListener("click", removeRestriction);
-
-

@@ -34,13 +34,6 @@ const iti = window.intlTelInput(phoneInput, {
     "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.1.1/js/utils.js",
 });
 
-if (iti) {
-  console.log(phoneInput, iti.s.dialCode);
-}
-window.addEventListener("mousedown", function () {
-  console.log(phoneInput, iti.s.dialCode);
-});
-
 // Add event listeners to the input fields to validate on blur
 nameInput.addEventListener("blur", validateName);
 emailInput.addEventListener("blur", validateEmail);
@@ -197,16 +190,16 @@ function submitForm(e) {
     var message = document.getElementById("message").value;
     var dateFor = document.getElementById("date-for").value;
     var phoneNumber = document.getElementById("phoneNumber").value;
+    var dialNumber = iti.s.dialCode;
 
     var numberOfPeople = document.getElementById("numberOfPeople").value;
     var foundAboutUs = document.getElementById("foundAboutUs").value;
 
-    var full_number = iti.getNumber(intlTelInputUtils.numberFormat.E164);
-    $("input[name='phoneNumber[full]'").val(full_number);
-    console.log(
-      full_number,
-      $("input[name='phoneNumber[full]'").val(full_number)
-    );
+    // var full_number = iti.getNumber(intlTelInputUtils.numberFormat.E164);
+    // $("input[name='phoneNumber[full]'").val(full_number);
+
+    var full_number = `+${dialNumber} ${phoneNumber}`;
+    console.log(full_number);
 
     fetch(scriptURL, { method: "POST", body: new FormData(form) })
       .then(successMessage.classList.add("show"))
