@@ -48,7 +48,7 @@ if (!empty($_POST)) {
 	$mail->Password = "yykmxheirqsjfsbx";
 	// $mail->Password = "bwcdoiiyzvsnbnne";
 //Email subject
-	$mail->Subject = "New form submition";
+	$mail->Subject = "Bar crawl Zagreb - Form submission";
 //Set sender email
 	$mail->setFrom($email);
 //Enable HTML

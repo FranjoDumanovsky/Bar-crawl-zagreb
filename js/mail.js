@@ -195,43 +195,51 @@ function submitForm(e) {
     var numberOfPeople = document.getElementById("numberOfPeople").value;
     var foundAboutUs = document.getElementById("foundAboutUs").value;
 
-    // var full_number = iti.getNumber(intlTelInputUtils.numberFormat.E164);
-    // $("input[name='phoneNumber[full]'").val(full_number);
-
     var full_number = `+${dialNumber} ${phoneNumber}`;
     console.log(full_number);
 
+    // Fetch now returns a Promise. Chain .then() to wait for its completion.
     fetch(scriptURL, { method: "POST", body: new FormData(form) })
-      .then(successMessage.classList.add("show"))
-      .catch(errorMessage.classList.add("show"));
-
-    // Send data to PHP script with AJAX request
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "./phpmailer/index.php", true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        successMessage.classList.add("show");
-      }
-    };
-    xhr.send(
-      "name=" +
-        name +
-        "&email=" +
-        email +
-        "&message=" +
-        message +
-        "&full_number=" +
-        full_number +
-        "&date-for=" +
-        dateFor +
-        "&numberOfPeople=" +
-        numberOfPeople +
-        "&foundAboutUs=" +
-        foundAboutUs
-    );
-
-    phoneInput.parentElement.style.display = "none";
+      .then(response => {
+        // Check if the request was successful.
+        if (response.ok) {
+          successMessage.classList.add("show");
+          
+          // Send data to PHP script with AJAX request
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "./phpmailer/index.php", true);
+          xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+              successMessage.classList.add("show");
+            }
+          };
+          xhr.send(
+            "name=" +
+              name +
+              "&email=" +
+              email +
+              "&message=" +
+              message +
+              "&full_number=" +
+              full_number +
+              "&date-for=" +
+              dateFor +
+              "&numberOfPeople=" +
+              numberOfPeople +
+              "&foundAboutUs=" +
+              foundAboutUs
+          );
+  
+          phoneInput.parentElement.style.display = "none";
+        } else {
+          throw new Error("Failed to submit form to Google Apps Script");
+        }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        errorMessage.classList.add("show");
+      });
   } else {
     checkInputs();
   }
