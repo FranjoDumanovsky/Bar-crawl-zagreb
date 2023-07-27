@@ -167,6 +167,7 @@ function checkInputs() {
 const submissionAlert = document.querySelector(".submission-alert");
 const errorMessage = document.querySelector(".error-message");
 const successMessage = document.querySelector(".success-message");
+const loadingMessage = document.querySelector(".loading-message");
 
 function submitForm(e) {
   e.preventDefault();
@@ -192,8 +193,9 @@ function submitForm(e) {
     // Log when the form passes validation.
     console.log('Form validation passed');
 
-    submissionAlert.classList.add("show");
 
+    submissionAlert.classList.add("show");
+    loadingMessage.classList.add("show");
     // Get form data
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
@@ -216,6 +218,7 @@ function submitForm(e) {
 
         // Check if the request was successful.
         if (response.ok) {
+          loadingMessage.classList.remove("show");
           successMessage.classList.add("show");
 
           // Send data to PHP script with AJAX request
@@ -257,6 +260,7 @@ function submitForm(e) {
       })
       .catch(error => {
         console.error("Error:", error);
+        loadingMessage.classList.remove("show");
         errorMessage.classList.add("show");
       });
   } else {
