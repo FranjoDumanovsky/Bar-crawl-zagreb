@@ -170,6 +170,10 @@ const successMessage = document.querySelector(".success-message");
 
 function submitForm(e) {
   e.preventDefault();
+
+  // Log when the function is called.
+  console.log('submitForm is called');
+
   const form = document.getElementById("contact-form");
   const scriptURL =
     "https://script.google.com/macros/s/AKfycbyQp57j3RVtKyM-ZkszMbCMgq6pn1IenSN7TAdbxTJi9yyp506KBGEPHbsbolhRRn2tkQ/exec";
@@ -182,36 +186,50 @@ function submitForm(e) {
     isChecked &&
     foundAboutUsValidation
   ) {
+    // Log when the form passes validation.
+    console.log('Form validation passed');
+
     submissionAlert.classList.add("show");
 
     // Get form data
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
-    let dateFor = document.getElementById("date-for").value;
-    let phoneNumber = document.getElementById("phoneNumber").value;
-    let dialNumber = iti.s.dialCode;
-    let numberOfPeople = document.getElementById("numberOfPeople").value;
-    let foundAboutUs = document.getElementById("foundAboutUs").value;
-    let full_number = `+${dialNumber} ${phoneNumber}`;
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+    var dateFor = document.getElementById("date-for").value;
+    var phoneNumber = document.getElementById("phoneNumber").value;
+    var dialNumber = iti.s.dialCode;
+    var numberOfPeople = document.getElementById("numberOfPeople").value;
+    var foundAboutUs = document.getElementById("foundAboutUs").value;
 
+    var full_number = `+${dialNumber} ${phoneNumber}`;
 
-    // Fetch now returns a Promise. Chain .then() to wait for its completion.
+    // Log the form data
+    console.log(name, email, message, dateFor, phoneNumber, numberOfPeople, foundAboutUs, full_number);
+
     fetch(scriptURL, { method: "POST", body: new FormData(form) })
       .then(response => {
+        // Log the response from fetch
+        console.log('Fetch response', response);
+
         // Check if the request was successful.
         if (response.ok) {
           successMessage.classList.add("show");
-          
+
           // Send data to PHP script with AJAX request
           var xhr = new XMLHttpRequest();
           xhr.open("POST", "./phpmailer/index.php", true);
           xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
           xhr.onreadystatechange = function () {
+            // Log xhr state and status
+            console.log('XHR state', xhr.readyState);
+            console.log('XHR status', xhr.status);
+
             if (xhr.readyState == 4 && xhr.status == 200) {
               successMessage.classList.add("show");
             }
           };
+
           xhr.send(
             "name=" +
               name +
@@ -228,7 +246,7 @@ function submitForm(e) {
               "&foundAboutUs=" +
               foundAboutUs
           );
-  
+
           phoneInput.parentElement.style.display = "none";
         } else {
           throw new Error("Failed to submit form to Google Apps Script");
@@ -239,10 +257,11 @@ function submitForm(e) {
         errorMessage.classList.add("show");
       });
   } else {
+    // Log when form validation fails.
+    console.log('Form validation failed');
     checkInputs();
   }
 }
-
 
 
 document.addEventListener("DOMContentLoaded", function() {
