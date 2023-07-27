@@ -1384,8 +1384,8 @@ input {
   justify-content: center;
   align-items: center;
 }
-.iti__flag-container {
-  background-color: #1882a8;
+.iti__flag-container.hide {
+visibility: hidden;
 }
 
 .lds-dual-ring {
