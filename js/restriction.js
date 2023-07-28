@@ -12,6 +12,7 @@ let isAdult = false;
 
 const removeOverlay = function () {
   overlay.style.display = "none";
+  document.body.style.overflow = "hidden";
 };
 
 window.addEventListener("load", function () {
