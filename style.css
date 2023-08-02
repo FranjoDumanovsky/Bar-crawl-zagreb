@@ -1368,8 +1368,6 @@ input {
   color: white;
 }
 
-
-
 .submission-alert .success-message,
 .submission-alert .error-message,
 .submission-alert .loading-message {
@@ -1385,7 +1383,7 @@ input {
   align-items: center;
 }
 .iti__flag-container.hide {
-visibility: hidden;
+  visibility: hidden;
 }
 
 .lds-dual-ring {
@@ -1642,9 +1640,8 @@ visibility: hidden;
   font-weight: 600;
 }
 
-
 @media screen and (max-width: 560px) {
-  .contact-section-header{
+  .contact-section-header {
     padding: 5rem 1rem;
     background-color: var(--dark);
   }
@@ -1653,9 +1650,48 @@ visibility: hidden;
   }
 }
 
+#partners-section {
+  background-color: #181818;
+  height: 600px;
+  min-height: fit-content;
+}
 
+.logo-container {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+}
 
+.partners-logo {
+  height: auto;
+  width: 180px;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+  /* transition: all 0.3s ease-in-out; */
+  opacity: 0.7;
+}
 
+.partners-title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 8rem;
+}
+/* .cannabis {
+  width: 300px;
+} */
+/* .logo-container:nth-of-type(2) {
+  justify-content: center;
+  margin-top: rem;
+} */
+/* .fakatFajn {
+  width: 320px;
+} */
 
-
-
+.partners-logo:hover {
+  transform: scale(1.15);
+  opacity: 1;
+  filter: invert(27%) sepia(75%) saturate(3330%) hue-rotate(357deg)
+    brightness(98%) contrast(108%);
+}
