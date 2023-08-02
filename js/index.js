@@ -110,6 +110,7 @@ const navLinkArray = document.querySelectorAll(".nav-link");
 const toggleMenu = function () {
   navIcon.classList.toggle("open");
   navLinks.classList.toggle("open");
+  console.log(body);
   body.classList.toggle("overflow");
 };
 
@@ -124,3 +125,27 @@ navLinkArray.forEach((linkItem) => {
     }
   });
 });
+
+ScrollTrigger.create({
+  trigger: "#guides-section",
+  onEnter: animateNum,
+});
+
+function animateNum() {
+  $(".count").each(function () {
+    $(this)
+      .prop("Counter", 0)
+      .animate(
+        {
+          Counter: $(this).text(),
+        },
+        {
+          duration: 4000,
+          easing: "swing",
+          step: function (now) {
+            $(this).text(Math.ceil(now));
+          },
+        }
+      );
+  });
+}
