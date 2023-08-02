@@ -110,6 +110,7 @@ const navLinkArray = document.querySelectorAll(".nav-link");
 const toggleMenu = function () {
   navIcon.classList.toggle("open");
   navLinks.classList.toggle("open");
+  console.log(body);
   body.classList.toggle("overflow");
 };
 
@@ -123,4 +124,45 @@ navLinkArray.forEach((linkItem) => {
       toggleMenu();
     }
   });
+});
+
+// ScrollTrigger.create({
+//   trigger: "#bar-crawl-numbers-section",
+//   start: "0% bottom",
+//   once: true,
+//   markers: true,
+//   onEnter: animateNum,
+// });
+
+function animateNum() {
+  $(".count").each(function () {
+    $(this)
+      .prop("Counter", 0)
+      .animate(
+        {
+          Counter: $(this).text(),
+        },
+        {
+          duration: 2500,
+          easing: "swing",
+          step: function (now) {
+            $(this).text(Math.ceil(now));
+          },
+        }
+      );
+  });
+}
+let animated = false;
+
+document.addEventListener("scroll", function () {
+  let numbersSection = document.querySelector("#bar-crawl-numbers-section");
+  let numberSectionTop = numbersSection.getBoundingClientRect().top;
+  let viewPort = document.documentElement.scrollTop;
+
+  if (!animated) {
+    if (numberSectionTop + viewPort < 400) {
+      animated = true;
+      animateNum();
+    }
+  }
 });
