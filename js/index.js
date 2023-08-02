@@ -126,10 +126,13 @@ navLinkArray.forEach((linkItem) => {
   });
 });
 
-ScrollTrigger.create({
-  trigger: "#guides-section",
-  onEnter: animateNum,
-});
+// ScrollTrigger.create({
+//   trigger: "#bar-crawl-numbers-section",
+//   start: "0% bottom",
+//   once: true,
+//   markers: true,
+//   onEnter: animateNum,
+// });
 
 function animateNum() {
   $(".count").each(function () {
@@ -140,7 +143,7 @@ function animateNum() {
           Counter: $(this).text(),
         },
         {
-          duration: 4000,
+          duration: 2500,
           easing: "swing",
           step: function (now) {
             $(this).text(Math.ceil(now));
@@ -149,3 +152,17 @@ function animateNum() {
       );
   });
 }
+let animated = false;
+
+document.addEventListener("scroll", function () {
+  let numbersSection = document.querySelector("#bar-crawl-numbers-section");
+  let numberSectionTop = numbersSection.getBoundingClientRect().top;
+  let viewPort = document.documentElement.scrollTop;
+
+  if (!animated) {
+    if (numberSectionTop + viewPort < 400) {
+      animated = true;
+      animateNum();
+    }
+  }
+});
