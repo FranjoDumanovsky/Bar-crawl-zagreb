@@ -1,32 +1,15 @@
 "use strict";
-
 const body = document.body;
-
-console.log(body);
-
 const btnAllow = document.querySelector(".restriction-button--yes");
 const btnPrevent = document.querySelector(".restriction-button--no");
 const overlay = document.querySelector(".restriction-overlay");
-
 let isAdult = false;
-
-const removeOverlay = function () {
-  overlay.style.display = "none";
-  document.body.style.overflow = "visible";
-};
-
-window.addEventListener("load", function () {
-  if (isAdult) {
-    removeOverlay();
-  } else {
-    document.body.style.overflow = "hidden";
-  }
-});
 
 const setRestriction = function () {
   isAdult = false;
   localStorage.setItem("isAdult", false);
   window.history.back();
+  overlay.classList.remove("remove");
   body.classList.add("overflow");
 };
 
@@ -38,8 +21,9 @@ const removeRestriction = function () {
 };
 
 if (localStorage.isAdult === "true") {
-  removeRestriction();
+  overlay.style.display = "none";
 } else {
+  setRestriction();
 }
 
 btnPrevent.addEventListener("click", setRestriction);

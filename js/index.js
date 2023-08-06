@@ -74,31 +74,31 @@ $(".swiper-button-next-guides.enabled").click(function () {
 });
 
 //GSAP clip-path animation
-const tl = gsap.timeline({ paused: true });
-const slide1 = document.querySelectorAll(".guides-img");
-const leftarrow = document.querySelector(".swiper-button-next-guides");
-const rightarrow = document.querySelector(".swiper-button-prev-guides");
+// const tl = gsap.timeline({ paused: true });
+// const slide1 = document.querySelectorAll(".guides-img");
+// const leftarrow = document.querySelector(".swiper-button-next-guides");
+// const rightarrow = document.querySelector(".swiper-button-prev-guides");
 
-tl.to(slide1, {
-  // clipPath: "circle(15% at 80% 50%)",
+// tl.to(slide1, {
+//   // clipPath: "circle(15% at 80% 50%)",
 
-  duration: 0.7,
-  ease: Power1.easeInOut,
-});
-tl.to(slide1, {
-  // clipPath: "circle(70% at 80% 50%)",
+//   duration: 0.7,
+//   ease: Power1.easeInOut,
+// });
+// tl.to(slide1, {
+//   // clipPath: "circle(70% at 80% 50%)",
 
-  duration: 0.7,
-  ease: Power1.easeInOut,
-  delay: 0.7,
-});
+//   duration: 0.7,
+//   ease: Power1.easeInOut,
+//   delay: 0.7,
+// });
 
-leftarrow.addEventListener("click", () => {
-  tl.restart();
-});
-rightarrow.addEventListener("click", () => {
-  tl.restart();
-});
+// leftarrow.addEventListener("click", () => {
+//   tl.restart();
+// });
+// rightarrow.addEventListener("click", () => {
+//   tl.restart();
+// });
 
 // For maintenance
 // window.location.href = "https://barcrawl-zagreb.com/maintenance.html";
@@ -153,7 +153,6 @@ function animateNum() {
   });
 }
 let animated = false;
-
 document.addEventListener("scroll", function () {
   let numbersSection = document.querySelector("#bar-crawl-numbers-section");
   let numberSectionTop = numbersSection.getBoundingClientRect().top;
