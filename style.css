@@ -1631,24 +1631,37 @@ input {
 
 #partners-section {
   background-color: #181818;
-  height: 800px;
+  height: 700px;
   min-height: fit-content;
 }
 
-.logo-container {
+.logo-row {
   width: 100%;
-  align-items: center;
   display: flex;
-  justify-content: space-between;
-  padding: 0 50px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.logo-column {
+  flex: 25%;
+  padding: 30px;
+}
+.logo-column img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+}
+
+.partners-title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 8rem;
 }
 
 .partners-logo {
-  height: auto;
-  width: 180px;
   cursor: pointer;
   transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .partners-logo:hover {
@@ -1658,76 +1671,21 @@ input {
     brightness(98%) contrast(108%);
 }
 
-.partners-title {
-  text-align: center;
-  font-size: 40px;
-  margin-bottom: 8rem;
-}
-
-.logo-container:nth-of-type(2) {
-  justify-content: center;
-  gap: 3rem;
-  margin-top: 8rem;
-}
-
-.fakatFajn {
-  width: 300px;
-}
-.wandererTravel {
-  width: 320px;
-}
-.cannabis {
-  width: 240px;
-}
-
-@media (max-width: 993px) {
-  .partners-title {
-    margin-bottom: 4rem;
-    font-size: 34px;
-  }
-  .logo-container {
-    flex-direction: column-reverse;
-    gap: 4rem;
-  }
-  .logo-container:nth-of-type(2) {
-    margin-top: 4.5rem;
-    margin-bottom: 4rem;
-    gap: 4.5rem;
-    flex-direction: column-reverse;
-  }
+@media screen and (max-width: 993px) {
   #partners-section {
     height: fit-content;
   }
-  .partners-logo {
-    width: 100%;
-    max-width: 250px;
+  .logo-column {
+    flex: 50%;
+    padding: 50px;
   }
-  .cannabis {
-    width: 200px;
+}
+
+@media screen and (max-width: 600px) {
+  .logo-column {
+    flex: 80%;
   }
-  .fakatFajn {
-    width: 320px;
-  }
-  .WandererTravel {
-    width: 320px;
-  }
-  .esn-zg {
-    width: 180px;
-  }
-  .nikkis {
-    width: 200px;
-  }
-  a:has(.esn-zg) {
-    order: 1;
-  }
-  a:has(.cannabis) {
-    order: 3;
-  }
-  a:has(.nikkis) {
-    order: 2;
-  }
-  .container-wrapper {
-    display: flex;
+  .logo-row {
     flex-direction: column;
   }
 }
@@ -1818,4 +1776,15 @@ input {
     margin-bottom: 3rem;
     font-size: 34px;
   }
+}
+
+#dress-code {
+  background-color: #222121;
+  color: white;
+}
+
+#dress-code .section-title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 4rem;
 }
